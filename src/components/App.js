@@ -12,12 +12,12 @@ class App extends React.Component{
     this.handleClick = this.handleClick.bind(this)
   }
 
-
+  
   render(){
-    console.log(`Rendering with count:-${this.state.count}`)
+    this.state.count%2==0 ? console.log(`Rendering with count:-${this.state.count}`): this.state.count
     return(
       <div>
-        <span id="count">{this.state.count}</span>
+        <span id="count">{this.state.count%2==0 ? this.state.count : this.state.count-1}</span>
         <button id="incr-btn" onClick={this.handleClick}>Increment</button>
       </div>
     )
